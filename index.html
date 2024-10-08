@@ -12,27 +12,36 @@
             justify-content: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f0f0;
+            background-color: black;
             font-family: Arial, sans-serif;
+            overflow: hidden;
+            animation: backgroundAnimation 10s infinite alternate;
+        }
+        @keyframes backgroundAnimation {
+            0% { background-color: #111; }
+            100% { background-color: #222; }
         }
         h1 {
-            color: #333;
+            color: #fff;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
         }
         button {
             margin: 10px;
             padding: 15px 25px;
             font-size: 18px;
             color: white;
-            background-color: #007BFF;
+            background-color: #28a745;
             border: none;
-            border-radius: 5px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.3s;
+            transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
         }
         button:hover {
-            background-color: #0056b3;
+            background-color: #218838;
             transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
         }
         button:active {
             transform: scale(0.95);
@@ -41,10 +50,7 @@
 </head>
 <body>
     <h1>Audios</h1>
-    <button onclick="playSound('sounds/sound1.mp3')">Violino</button>
-    <button onclick="playSound('sounds/sound2.mp3')">Sound 2</button>
-    <button onclick="playSound('sounds/sound3.mp3')">Sound 3</button>
-
+    <button onclick="playSound('sounds/violino.mp3')">Violino</button>
     <script>
         function playSound(sound) {
             const audio = new Audio(sound);
